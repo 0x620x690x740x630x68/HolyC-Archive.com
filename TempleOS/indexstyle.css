@@ -1,0 +1,108 @@
+.center {
+    display: block;
+    float: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+a:link {
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+a:visited {
+    color: darkcyan;
+    text-decoration: none;
+}
+button {
+    float: middle;
+    margin-left: auto;
+    margin-right: auto;
+
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+
+    background-color: gold;
+    border-width: medium;
+    border-color: gold;
+
+    padding: 20px;
+
+    font-size: 18px;
+    font-style: italic;
+    vertical-align: middle;
+}
+button:hover {
+    background-color: darkgoldenrod;
+}
+hr {
+    width: medium;
+    color: gold;
+}
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+iframe {
+    display: block;
+    float: middle;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-width: medium;
+    border-color: gold;
+}
+body {
+    background-color: darkslategray;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+#container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-style: solid;
+    border-width: medium;
+    border-color: gold;
+
+    padding: 20px;
+
+    background-color: #55FFFF;/*same as Templeos-header.png*/
+
+    line-height: 175%;
+
+    font-size: 18px;
+}
+#disclaimer {
+    display: block;
+    float: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 825px;
+
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    margin-bottom: 40px;
+}
+#main {
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+#donate {
+    display: block;
+    float: middle;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
