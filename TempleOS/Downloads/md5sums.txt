@@ -1,0 +1,8 @@
+7ff451df9f8ac3b07301c04c32f9dfed  ReadMe.TXT
+bc0a9310776e536ad52c68df558cfdc1  TOS_Distro.ISO
+a6479efcb3850f5667f66fb8ef6d1bac  TOS_Lite.ISO
+e8bd06b9f3993003af20b6d16bc5b688  TOS_Supplemental1.ISO.C
+1e0860303c2c279dfae7cf096e75a8e7  TOS_Supplemental2.ISO.C
+428732ccdd089ecb70a85c988a608889  TOS_Supplemental3.ISO.C
+2facf5d7cfa08de4c47aede4a64cfb44  TempleOS.ISO
+470093c848f4086ffafd5d7967bd9c8a  TempleOSLite.ISO

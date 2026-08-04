@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>TempleOS Live Boot</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: darkslategray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Courier New", Courier, monospace;
+            overflow: hidden !important;
+            position: fixed;
+        }
+
+        .scaler-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(var(--display-scale, 1));
+            transform-origin: center center;
+        }
+
+        .canvas-viewport-lock {
+            width: 1024px;
+            height: 860px;
+            position: relative;
+            border: 4px solid #FFFF55;
+            box-shadow: 10px 10px 0px #000000;
+            overflow: hidden !important;
+            display: block;
+        }
+
+        .canvas-viewport-lock iframe {
+            position: absolute;
+            top: -91px;
+            left: -192px;
+            width: 1408px !important;
+            height: 1200px !important;
+            border: none;
+            display: block;
+            z-index: 1;
+            overflow: hidden !important;
+        }
+
+        .ui-overlay-container {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 2147483647;
+            pointer-events: auto;
+        }
+
+        .retro-nav-button {
+            background-color: #FF5555;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            padding: 8px 16px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px #000000;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .retro-nav-button:hover { background-color: #DD3333; }
+        .retro-nav-button:active { box-shadow: none; transform: translate(3px, 3px); }
+    </style>
+</head>
+<body>
+
+    <div class="ui-overlay-container">
+        <a href="../index.html" class="retro-nav-button">&lt;-- EXIT TempleOS WASM</a>
+        <br>
+        <br>
+        <h style="fontweight: bold">Credits:</h>
+        <br>
+        <a href="https://reiko.app/" target="_blank"
+           style="display: block; text-align: center; color: #FFFF55; font-family: monospace; font-size: 0.75rem; margin-top: 8px; text-decoration: underline; text-shadow: 1px 1px 0 #000;">
+           TempleOS WASM by Reiko
+        </a>
+        <a>Check them out, they are awesome :)</a>
+    </div>
+
+    <div class="scaler-wrapper" id="scaleNode">
+        <div class="canvas-viewport-lock">
+            <iframe src="https://templeos.reiko.app" scrolling="no" allow="autoplay; speaker; fullscreen; keyboard; pointer-lock"></iframe>
+        </div>
+    </div>
+
+<script>
+    const scaleNode = document.getElementById('scaleNode');
+
+    function syncScreenPercentage() {
+        const currentScreenWidth = window.innerWidth;
+        const scaleFactor = currentScreenWidth / 1920;
+        scaleNode.style.setProperty('--display-scale', scaleFactor);
+    }
+
+    window.addEventListener('resize', syncScreenPercentage);
+    window.addEventListener('DOMContentLoaded', syncScreenPercentage);
+</script>
+
+</body>
+</html>
