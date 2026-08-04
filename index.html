@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HolyC Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+    <div class="system-frame">
+        <header class="system-header">
+            <div>
+                <span>Public Domain</span>
+            </div>
+            <div class="header-brand">holyc-archive.com</div>
+                <span>Preserving since 2026</span>
+        </header>
+
+        <section class="archive-intro">
+            <div class="liveos">**NEW Boot TempleOS live inside your browser here! -> <a href="live.html" style="color: #FFFF55";>TempleOS WASM</a></div>
+            <h1>The HolyC Archive</h1>
+            <p>This archive acts as a central library to find community made creations of TempleOS and HolyC. You can request to have your own project, or someone else's, archived here.</p>
+            <br>
+            <div class="foreword-header">Foreword:</div>
+            <br>
+            <p>Ever since first booting the TempleOS operating system, I have been amazed by what a single man, Terry, achieved under what he believed was a direct command from God to build a 640x480 digital third temple. What started as casual curiosity quickly sparked into a deep appreciation for it's language,  HolyC. It removes all the bloat of modern programming, offering an ecosystem that is beautifully minimal yet undeniably powerful.</p>
+            <p class=foreword>What people are going to read is, "It's about a pathetic schizophrenic who made a crappy operating system." My perspective is, "God said I made His temple." - Terry A. Davis</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="submit"><a href="https://forms.gle/eMLuQAXqnXGnV6PG7" style="color: #FFFF55";>Submit a form</a> to get a project archived here for free!</div>
+            <br>
+            <br>
+            <div class="meta-line">Note: Projects will be compressed if they exceed 25mb or contain more than one file.</div>
+        </section>
+        <section class="archive-contents" style="position: -webkit-sticky;position: sticky; top: 0; z-index: 9999; display: block; width: 100%; padding: 15px 0; clear: both;">
+
+            <div class = "contact"><img src="Logo128x152.jpg" width="30" style="vertical-align: middle; margin-right: 30px;">Contents: | <a href="#games" style="color: #FFFF55";>Games</a> | <a href="#utilities" style="color: #FFFF55";>Utilities</a> | <a href="#demos" style="color: #FFFF55";>Demos</a> | <a href="#zealos" style="color: #FFFF55";>ZealOS</a> | <a href="#misc" style="color: #FFFF55";>Misc</a> | <a href="#forks" style="color: #FFFF55";>Forks</a> | <a href="#hymns" style="color: #FFFF55";>Hymns</a> | <a href="live.html" style="color: #FFFF55";>TempleOS WASM</a> |<img src="Logo128x152.jpg" width="30" style="vertical-align: middle; margin-left: 30px;"></div>
+
+            <div class="autocomplete-wrapper" style="position: relative; max-width: 400px; margin: 20px 0;">
+            <input
+                type="text"
+                id="archive-search"
+                placeholder="Search..."
+                oninput="showSuggestions()"
+                autocomplete="off"
+                style="width: 100%; padding: 10px; font-family: monospace;">
+            <div
+            id="suggestions-box"
+                style="position: absolute; width: 100%; max-height: 200px; overflow-y: auto; background: #222; border: 1px solid #555; z-index: 999; display: none;"
+            ></div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <main class="directory-container" id="directory-root"></main>
+
+        <footer class="system-footer">
+            <div class="console-line"><span class="console-prompt">D:/Home></span> BootHDIns('D');</div>
+            <div class="console-line"><span class="console-prompt">D:/Home ></span> "Made by FT";</div>
+            <div class="editorial-divider"></div>
+            <div><strong>Archival Notice:</strong> TempleOS/HolyC source files are public domain (Terry A. Davis). All site curation is dedicated to the public domain via <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.en" rel="license nofollow" style="color: #0066cc; text-decoration: none;">CC0 1.0 Universal</a>. Third-party community software artifacts are preserved strictly for educational and historical purposes under the Fair Use doctrine (17 U.S.C. § 107). This archive claims no ownership or rights over community contributions. Copyright owners who object to the preservation of their digital artifacts may request immediate removal by contacting <a href="mailto:admin@holyc-archive.com" style="color: #0066cc; text-decoration: none; font-weight: bold;">admin@holyc-archive.com</a>.</div>
+            <div class="editorial-divider"></div>
+            <div class="memorial-tag">In Memory of Terry A. Davis (1969 – 2018)</div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
