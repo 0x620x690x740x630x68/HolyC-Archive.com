@@ -35,7 +35,7 @@ async function initializeAutomation() {
             const sectionBlock = document.createElement("div");
             sectionBlock.className = "directory-section";
             sectionBlock.id = folder.toLowerCase();
-            sectionBlock.style.scrollMarginTop = "180px";
+            sectionBlock.style.scrollMarginTop = "170px";
             sectionBlock.innerHTML = `
             <div class="directory-banner">
             <span class="path">V:${systemPath}</span>
