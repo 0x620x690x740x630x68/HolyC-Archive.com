@@ -180,7 +180,7 @@ function showSuggestions() {
                         targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
                         targetRow.style.backgroundColor = "#555500";
-                        setTimeout(() => targetRow.style.backgroundColor = "transparent", 1500);
+                        setTimeout(() => targetRow.style.backgroundColor = "", 1500);
                     }
                     document.getElementById("archive-search").value = "";
                     box.style.display = "none";
