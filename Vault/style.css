@@ -5,7 +5,7 @@
    03_CYAN:    #00AAAA  |  07_LT_GRAY:  #AAAAAA  |  11_LT_CYAN:  #55FFFF  |  15_WHITE:    #FFFFFF
 */
 
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
 * {
     box-sizing: border-box;
