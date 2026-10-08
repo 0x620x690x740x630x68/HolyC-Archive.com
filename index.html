@@ -7,55 +7,76 @@
     <meta name="description" content="Preservation of the public-domain operating system, TempleOS.">
     <title>HolyC Archive | Home</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+        :root {
+            --bg: #0a0c10;
+            --panel: #11141b;
+            --line: #232937;
+            --text: #e6e9f0;
+            --mute: #98a1b3;
+            --dim: #6b7487;
+            --acc: #5ce1e6;
+            --mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+            color-scheme: dark;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        ::selection { background: rgba(92, 225, 230, 0.3); color: #fff; }
+
         body {
-            background-color: #0b0b0b;
-            color: #E0E0E0;
-            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg);
+            background-image: radial-gradient(900px 320px at 50% 0, rgba(92, 225, 230, 0.07), transparent 70%);
+            background-repeat: no-repeat;
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            padding: 50px 20px;
+            padding: 56px 20px 48px;
+            -webkit-font-smoothing: antialiased;
         }
 
         header {
             text-align: center;
-            margin-bottom: 60px;
-            border-bottom: 1px solid #1E1E1E;
+            margin: 0 auto 56px;
+            max-width: 1200px;
+            border-bottom: 1px solid var(--line);
             padding-bottom: 40px;
         }
 
         h1 {
             color: #FFFFFF;
-            font-size: 2.8rem;
-            letter-spacing: 4px;
-            margin-bottom: 12px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1.15;
+            margin-bottom: 14px;
         }
 
         .subtitle {
-            color: #888888;
-            font-size: 1.1rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            color: var(--mute);
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
         }
 
         .portal-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 28px;
             max-width: 1200px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 56px auto;
         }
 
         .portal-card {
-            background-color: #141414;
-            border: 1px solid #222222;
-            border-radius: 12px;
-            padding: 35px;
+            background-color: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 32px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -67,110 +88,136 @@
                         border-color 0.25s ease,
                         box-shadow 0.25s ease,
                         background-color 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .portal-card:focus-visible {
+            outline: 2px solid var(--c);
+            outline-offset: 3px;
         }
 
         .portal-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #2D2D2D;
-            padding-bottom: 12px;
+            color: var(--c);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.06em;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
 
         .portal-card h2::after {
             content: '[ TOS ]';
-            font-size: 0.8rem;
-            color: #444444;
-            font-weight: normal;
-            letter-spacing: 0;
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--dim);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            padding: 2px 8px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            white-space: nowrap;
             transition: all 0.25s ease;
         }
 
         .portal-card p {
             font-size: 0.95rem;
-            margin-bottom: 30px;
-            color: #959595;
+            margin-bottom: 12px;
+            color: var(--mute);
             transition: color 0.25s ease;
         }
 
+        .portal-card p:last-child {
+            margin-bottom: 28px;
+        }
+
+        .portal-card p strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
         .portal-card:hover p {
-            color: #CCCCCC;
+            color: #d0d5e0;
         }
 
         .portal-btn {
             display: block;
             text-align: center;
             background-color: transparent;
-            font-weight: bold;
-            font-size: 1rem;
-            padding: 14px;
-            border-radius: 6px;
+            border: 1px solid var(--c);
+            color: var(--c);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 13px;
+            border-radius: 10px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.08em;
             transition: all 0.2s ease-in-out;
             pointer-events: none;
         }
 
-        .cyan-station h2 { color: #55FFFF; }
-        .cyan-station .portal-btn { border: 1px solid #55FFFF; color: #55FFFF !important; }
-
-        .cyan-station:hover {
-            transform: translateY(-8px);
-            background-color: #1a2224;
-            border-color: #55FFFF;
-            box-shadow: 0 12px 30px rgba(85, 255, 255, 0.12);
+        .portal-card:hover,
+        .portal-card:focus-visible {
+            transform: translateY(-6px);
+            background-color: var(--c-bg);
+            border-color: var(--c);
+            box-shadow: 0 16px 36px rgba(var(--c-rgb), 0.14);
         }
-        .cyan-station:hover h2::after { color: #55FFFF; text-shadow: 0 0 8px #55FFFF; }
-        .cyan-station:hover .portal-btn { background-color: #55FFFF; color: #0b0b0b !important; box-shadow: 0 0 15px rgba(85, 255, 255, 0.3); }
 
-        .green-station h2 { color: #55FF55; }
-        .green-station .portal-btn { border: 1px solid #55FF55; color: #55FF55 !important; }
-
-        .green-station:hover {
-            transform: translateY(-8px);
-            background-color: #16241a;
-            border-color: #55FF55;
-            box-shadow: 0 12px 30px rgba(85, 255, 85, 0.12);
+        .portal-card:hover h2::after,
+        .portal-card:focus-visible h2::after {
+            color: var(--c);
+            border-color: rgba(var(--c-rgb), 0.45);
         }
-        .green-station:hover h2::after { color: #55FF55; text-shadow: 0 0 8px #55FF55; }
-        .green-station:hover .portal-btn { background-color: #55FF55; color: #0b0b0b !important; box-shadow: 0 0 15px rgba(85, 255, 85, 0.3); }
 
-        .purple-station h2 { color: #BB86FC; }
-        .purple-station .portal-btn { border: 1px solid #BB86FC; color: #BB86FC !important; }
-
-        .purple-station:hover {
-            transform: translateY(-8px);
-            background-color: #1b1624;
-            border-color: #BB86FC;
-            box-shadow: 0 12px 30px rgba(187, 134, 252, 0.12);
+        .portal-card:hover .portal-btn,
+        .portal-card:focus-visible .portal-btn {
+            background-color: var(--c);
+            color: #06121a;
+            box-shadow: 0 0 18px rgba(var(--c-rgb), 0.3);
         }
-        .purple-station:hover h2::after { color: #BB86FC; text-shadow: 0 0 8px #BB86FC; }
-        .purple-station:hover .portal-btn { background-color: #BB86FC; color: #0b0b0b !important; box-shadow: 0 0 15px rgba(187, 134, 252, 0.3); }
+
+        .cyan-station   { --c: #5ce1e6; --c-rgb: 92, 225, 230;  --c-bg: #121c24; }
+        .green-station  { --c: #5ef0a0; --c-rgb: 94, 240, 160;  --c-bg: #12201a; }
+        .purple-station { --c: #b79cff; --c-rgb: 183, 156, 255; --c-bg: #17152a; }
 
         footer {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
-            border-top: 1px solid #1E1E1E;
-            padding-top: 40px;
+            border-top: 1px solid var(--line);
+            padding-top: 36px;
             font-size: 0.85rem;
-            color: #555555;
-            letter-spacing: 0.5px;
+            line-height: 1.7;
+            color: var(--dim);
         }
 
-        footer strong { color: #E0E0E0; }
-        footer a { color: #888888; text-decoration: none; transition: color 0.2s ease; }
+        footer p {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        footer strong { color: var(--text); font-weight: 600; }
+        footer a { color: var(--mute); text-decoration: none; transition: color 0.2s ease; }
         footer a:hover { color: #FFFFFF; text-decoration: underline; }
+        /* the CC0 link carries an inline dark-blue colour that is hard to read on dark; override it here */
+        footer a[rel~="license"] { color: var(--acc) !important; text-decoration: underline !important; text-underline-offset: 3px; }
 
         @media (max-width: 950px) {
             .portal-grid { grid-template-columns: 1fr; gap: 20px; }
-            body { padding: 30px 15px; }
-            h1 { font-size: 2.2rem; }
+            body { padding: 32px 15px; }
+            header { margin-bottom: 36px; padding-bottom: 30px; }
+            .portal-card { padding: 26px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+            .portal-card:hover, .portal-card:focus-visible { transform: none; }
         }
     </style>
 </head>
